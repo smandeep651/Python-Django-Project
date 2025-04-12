@@ -1,0 +1,23 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Contact | My Portfolio{% endblock %}
+
+{% block content %}
+    <h1>Contact Me</h1>
+    <p>If you'd like to get in touch, feel free to send me an email or connect on LinkedIn.</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <ul>
+        <li>Email: yourname@example.com</li>
+        <li>Phone: +1 (902) 123-4567</li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+        <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+    </ul>
+
+    <h2>Want to work together?</h2>
+    <p>Let’s collaborate on your next project! 🚀</p>
+{% endblock %}

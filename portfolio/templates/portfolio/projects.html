@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+    <h1>Projects</h1>
+    {% for project in projects %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                
+                {% if project.url %}
+                    <a href="{{ project.url }}" class="btn btn-primary" target="_blank">View Project</a>
+                {% endif %}
+
+                {% if project.link %}
+                    <a href="{{ project.link }}" class="btn btn-secondary" target="_blank">More Info</a>
+                {% endif %}
+
+                {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}" class="img-fluid mt-3">
+                {% endif %}
+            </div>
+        </div>
+    {% empty %}
+        <p>No projects added yet.</p>
+    {% endfor %}
+{% endblock %}
