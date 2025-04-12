@@ -1,19 +1,32 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
 
 {% block title %}About | My Portfolio{% endblock %}
 
 {% block content %}
-    <h1>About Me</h1>
-    <p>Hello! I’m a passionate full-stack developer based in Halifax, Nova Scotia. I love creating clean, user-friendly, and dynamic web applications using Django, React, and modern web technologies.</p>
-    
-    <h2>Skills</h2>
-    <ul>
-        <li>Python, Django, REST API</li>
-        <li>JavaScript, React.js, Tailwind CSS</li>
-        <li>MongoDB, PostgreSQL, SQLite</li>
-        <li>Docker, Git, CI/CD pipelines</li>
-    </ul>
+<div class="row align-items-center">
+    <div class="col-md-6">
+  <!-- Use the static tag to properly reference the image -->
+  <img src="{% static 'portfolio/images/Full-Stack-Developer-jpg.webp' %}" alt="Developer Portrait" class="img-fluid rounded shadow">    </div>
+    <div class="col-md-6">
+        <h1 class="text-primary mb-3">About Me</h1>
+        <p class="lead">Hello! I’m a passionate full-stack developer based in <strong>Halifax, Nova Scotia</strong>. I specialize in creating clean, user-friendly, and dynamic web applications using <strong>Django, React</strong>, and other modern web technologies.</p>
+        
+        <h3 class="text-success mt-4">🛠 Skills</h3>
+        <ul>
+            <li>Python, Django, REST API</li>
+            <li>JavaScript, React.js, Tailwind CSS</li>
+            <li>MongoDB, PostgreSQL, SQLite</li>
+            <li>Docker, Git, CI/CD pipelines</li>
+        </ul>
 
-    <h2>Experience</h2>
-    <p>Over the past 2+ years, I’ve worked on freelance and personal projects building web apps for businesses, including attendance systems, restaurant websites, and portfolio sites.</p>
+        <h3 class="text-success mt-4">💼 Experience</h3>
+        <p>With 2+ years of freelance and personal project experience, I’ve built full-stack web applications including:</p>
+        <ul>
+            <li>Employee attendance systems with geolocation and Face ID</li>
+            <li>Restaurant websites using the MERN stack</li>
+            <li>Portfolio websites and admin dashboards</li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
